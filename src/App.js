@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import TodoItem from './components/TodoItem'
 
@@ -24,6 +24,11 @@ class App extends Component {
               key={ index }
               description={ item.description }
               completed={ item.completed }
+              ontoggleCompleted={
+                () => {
+                  console.log('TodoItem onToggleCompleted recieved', index)
+                }
+              }
             />
           ))
         }
