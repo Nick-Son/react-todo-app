@@ -14,6 +14,21 @@ class App extends Component {
     ]
   }
 
+  onToggleItemAtIndex = (index) => {
+    this.setState((prevState) => {
+      // Get current items
+      const items = prevState.items;
+      // find the item with the particular index
+      const item = items[index];
+      item.completed = !item.completed
+
+      // return the changes we have
+      return {
+        items: items
+      }
+    })
+  }
+
   render() {
     const items = this.state.items
     return (
